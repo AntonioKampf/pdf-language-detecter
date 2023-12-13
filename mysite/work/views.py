@@ -18,7 +18,7 @@ def index(request):
 
 
 def detect_short_language(text):
-    german_short_words = ["das", "und", "tu", "zu", "von", "das", "was"]
+    german_short_words = ["das", "und", "tu", "zu", "von", "die", "was"]
     russian_short_words = ["и", "в", "не", "он", "на", "с", "что"]
 
     words = text.lower().split()
@@ -59,9 +59,9 @@ def detect_language(text):
     russian_confidence = russian_count / total_chars
 
     if german_confidence > russian_confidence:
-        return "Немецкий", german_confidence
+        return "German", german_confidence
     else:
-        return "Русский", russian_confidence
+        return "Russian", russian_confidence
 
 
 def detect_view(request, file_id=None):
