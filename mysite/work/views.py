@@ -58,7 +58,7 @@ def detect_language(text):
     german_confidence = german_count / total_chars
     russian_confidence = russian_count / total_chars
 
-    if german_confidence > russian_confidence:
+    if german_count > russian_count:
         return "German", german_confidence
     else:
         return "Russian", russian_confidence
